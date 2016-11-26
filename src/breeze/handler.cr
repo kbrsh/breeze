@@ -24,13 +24,13 @@ module Breeze
 
     def execReq(ctx)
       if find(ctx.request.path)
-        context.response.status_code = 200
-        context.response.headers["Content-Type"] = "text/plain"
-        context.response.puts "Found"
+        ctx.response.status_code = 200
+        ctx.response.headers["Content-Type"] = "text/plain"
+        ctx.response.puts "Found"
       end
-      context.response.status_code = 404
-      context.response.headers["Content-Type"] = "text/plain"
-      context.response.puts "Not Found"
+      ctx.response.status_code = 404
+      ctx.response.headers["Content-Type"] = "text/plain"
+      ctx.response.puts "Not Found"
     end
   end
 end
