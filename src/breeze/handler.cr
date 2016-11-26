@@ -7,6 +7,7 @@ module Breeze
     end
 
     def call(ctx)
+      execReq(ctx)
     end
   end
 end
