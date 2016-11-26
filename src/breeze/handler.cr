@@ -15,7 +15,7 @@ module Breeze
     end
 
     def find(path)
-      matched = routes.select {|route| route =~ Regex.new(path)}
+      matched = routes.select {|route| route.path =~ Regex.new(path)}
       match = matched[0]?
       return match
     end
