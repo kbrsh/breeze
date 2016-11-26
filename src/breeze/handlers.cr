@@ -5,5 +5,8 @@ module Breeze
     def initialize
       @routes = [] of Route
     end
+
+    def add
+    end
   end
 end
