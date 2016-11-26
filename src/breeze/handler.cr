@@ -10,7 +10,7 @@ module Breeze
 
     end
 
-    def add_route(method, path, &handler : HTTP::Server::Context -> _)
+    def add(method, path, &handler : HTTP::Server::Context -> _)
       @routes << Route.new(method, path, &handler)
     end
   end
