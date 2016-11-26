@@ -25,8 +25,8 @@ module Breeze
     def execReq(ctx)
       found = find(ctx.request.path)
       if found
-        ctx.response.status_code = ctx.response?.try(&.status) || 200
-        ctx.response.headers["Content-Type"] = ctx.response?.try(&.content_type) || "text/plain"
+        ctx.response.status_code = ctx.response.status_code || 200
+        ctx.response.headers["Content-Type"] = "text/plain"
         ctx.response.puts found.handler.call ctx
       else
         ctx.response.status_code = 404

@@ -5,7 +5,8 @@ get "/" do
 end
 
 get "/test" do |ctx|
-  "Hello #{ctx.request.path}"
+  ctx.response.status_code = 404
+  "Hello #{ctx.request.path}, code: #{ctx.response.status_code}, params: #{ctx.request.query_params}"
 end
 
 Breeze.start(3000)
