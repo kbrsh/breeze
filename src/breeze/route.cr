@@ -4,6 +4,7 @@ module Breeze
     @method : String
     @path : String
     @handler : Proc(HTTP::Server::Context, String)
+
     def initialize(method, path, handler)
       @method = method
       @path = path
