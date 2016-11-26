@@ -15,6 +15,9 @@ module Breeze
     end
 
     def find(path)
+      matched = @routes.select |route| do
+        route =~ Regexp.new(path)
+      end
     end
   end
 end
