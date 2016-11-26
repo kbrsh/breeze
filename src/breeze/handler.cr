@@ -13,5 +13,8 @@ module Breeze
     def add(method, path, &handler)
       @routes << Route.new(method, path, &handler)
     end
+
+    def find(path)
+    end
   end
 end
