@@ -7,7 +7,7 @@ module Breeze
 
 
     def protocol(ssl)
-      ssl ? "https" : "http"
+      return ssl ? "https" : "http"
     end
   end
 end
