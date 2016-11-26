@@ -1,3 +1,3 @@
 def get(path, &block : HTTP::Server::Context -> _)
-  Breeze::Handler.new.add("GET", path, &block)
+  main_handler.add("GET", path, &block)
 end
