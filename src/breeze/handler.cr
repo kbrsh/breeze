@@ -6,7 +6,7 @@ module Breeze
       @routes = [] of Route
     end
 
-    def call
+    def call(ctx)
     end
   end
 end
