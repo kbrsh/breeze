@@ -2,7 +2,8 @@ require "./breeze/*"
 require "http"
 
 module Breeze
-  def self.start(port = 3000, ip = "0.0.0.0")
-
+  def self.start(port ip)
+    server = HTTP::Server.new(ip, port, handlers)
+    server.listen
   end
 end
