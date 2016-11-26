@@ -3,7 +3,7 @@ module Breeze
     getter handler
 
     def initialize(@method, path, @&handler : HTTP::Context -> _)
-      
+      @parts = path.split "/"
     end
   end
 end
