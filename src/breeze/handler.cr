@@ -18,6 +18,8 @@ module Breeze
       matched = @routes.select |route| do
         route =~ Regexp.new(path)
       end
+      match = matched[0]
+      return
     end
   end
 end
