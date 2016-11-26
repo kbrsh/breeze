@@ -5,11 +5,11 @@ module Breeze
       @ip = ip ? ip : "0.0.0.0"
     end
 
-    def self.port
+    def port
       return @port
     end
 
-    def self.ip
+    def ip
       return @ip
     end
 
