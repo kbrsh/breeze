@@ -19,7 +19,7 @@ module Breeze
         route =~ Regexp.new(path)
       end
       match = matched[0]
-      return
+      return match ? match : nil
     end
   end
 end
