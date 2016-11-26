@@ -9,5 +9,8 @@ module Breeze
     def call(ctx)
       execReq(ctx)
     end
+
+    def add(method, path, &handler)
+    end
   end
 end
