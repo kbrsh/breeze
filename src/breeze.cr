@@ -1,5 +1,6 @@
 require "./breeze/*"
 
 module Breeze
-  # TODO Put your code here
+  def self.start(port, ip)
+  end
 end
