@@ -1,0 +1,10 @@
+name: breeze
+version: 0.1.0
+
+authors:
+  - Kabir Shah <simplecooldude1@gmail.com>
+
+
+crystal: 0.20.0
+
+license: MIT
