@@ -6,7 +6,8 @@ module Breeze
       @routes = [] of Route
     end
 
-    def add
+    def add(method, path, &handler : HTTP::Server::Context -> _)
+      @routes << Route.new()
     end
   end
 end
