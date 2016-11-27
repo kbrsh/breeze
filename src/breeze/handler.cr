@@ -10,7 +10,7 @@ module Breeze
     def call(ctx : HTTP::Server::Context)
       time = Time.now
       execReq(ctx)
-      puts "Elapsed Time: #{elapsed_text(Time.now - time)}"
+      puts "Elapsed Time: #{readable_time(Time.now - time)}"
     end
 
     def add(method, path, handler)
