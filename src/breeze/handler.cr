@@ -24,7 +24,7 @@ module Breeze
     def execReq(ctx)
       found = find(ctx.request.path)
       if found
-        puts "\t\e[32mGET\e[0m #{ctx.request.path}"
+        puts "\t\e[32m#{found.method.upcase}\e[0m #{ctx.response.status_code} #{ctx.request.path}"
         ctx.response.status_code = ctx.response.status_code || 200
         ctx.response.headers["Content-Type"] = "text/plain"
         ctx.response.puts found.handler.call ctx
