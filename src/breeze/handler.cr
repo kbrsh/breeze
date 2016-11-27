@@ -8,7 +8,9 @@ module Breeze
     end
 
     def call(ctx : HTTP::Server::Context)
+      time = Time.now
       execReq(ctx)
+      puts "Elapsed Time: #{elapsed_text(Time.now - time)}"
     end
 
     def add(method, path, handler)
@@ -24,7 +26,7 @@ module Breeze
     def execReq(ctx)
       found = find(ctx.request.method, ctx.request.path)
       if found
-        ctx.response.puts found.handler.call ctx
+        ctx.response.puts found.handler.call(ctx)
       else
         ctx.response.status_code = 404
         ctx.response.headers["Content-Type"] = "text/plain"
@@ -35,6 +37,10 @@ module Breeze
       ctx.response.status_code = 500
       ctx.response.puts "500 Internal Server Error"
       puts "\t\e[31m#{ctx.request.method} \e[33m#{ctx.response.status_code} \e[0m#{ctx.request.path}"
+    end
+
+    private def readable_time(elapsed)
+      "#{(elapsed.total_milliseconds * 1000).round(2)}µs"
     end
   end
 end
