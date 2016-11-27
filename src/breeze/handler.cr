@@ -23,7 +23,7 @@ module Breeze
 
     def execReq(ctx)
       found = find(ctx.request.path)
-      puts "\t\e[32m#{found.upcase} \e[33m#{ctx.response.status_code} \e[0m#{ctx.request.path}"
+      puts "\t\e[32m#{found.method.upcase} \e[33m#{ctx.response.status_code} \e[0m#{ctx.request.path}"
       if found
         ctx.response.puts found.handler.call ctx
       else
