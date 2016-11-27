@@ -1,7 +1,8 @@
 require "./src/breeze.cr"
 
 get "/" do |ctx|
-  "Hello Breeze! #{ctx.params["hi"]}"
+  thing = ctx.params.has_key?("name") ? ctx.params["name"] : "Breeze"
+  "Hello #{thing}!"
 end
 
 get "/test" do |ctx|
