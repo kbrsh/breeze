@@ -5,7 +5,7 @@ module Breeze
     @path : String
     @handler : HTTP::Server::Context -> String
 
-    def initialize(method : String, path : String, handler : HTTP::Server::Context -> _)
+    def initialize(method : String, path : String, handler : HTTP::Server::Context -> String)
       @method = method
       @path = path
       @handler = handler
