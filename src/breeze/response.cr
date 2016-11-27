@@ -1,6 +1,6 @@
 module Breeze
   class Breeze::Response
-    def initialize
+    def initialize(content_type)
       @content_type = "text/plain"
     end
 

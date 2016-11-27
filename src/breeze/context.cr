@@ -1,6 +1,6 @@
 module Breeze
   class Breeze::Context
-    def initialize()
+    def initialize(@request : Request, @response : Response)
 
     end
   end
