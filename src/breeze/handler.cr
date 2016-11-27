@@ -8,7 +8,6 @@ module Breeze
     end
 
     def call(ctx : HTTP::Server::Context)
-      puts "Calling Context"
       execReq(ctx)
     end
 
