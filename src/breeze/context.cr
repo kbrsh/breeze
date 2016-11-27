@@ -3,5 +3,10 @@ class HTTP::Server
     def query
       return @request.query_params
     end
+
+    def redirect(url, status = 302)
+      @response.headers.add "Location", url
+      @response.status_code = status
+    end
   end
 end
