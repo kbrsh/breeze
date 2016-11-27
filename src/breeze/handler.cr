@@ -7,7 +7,7 @@ module Breeze
       @routes = [] of Route
     end
 
-    def call(ctx : HTTP::Server::Context -> _)
+    def call(ctx : HTTP::Server::Context)
       time = Time.now
       execReq(ctx)
       puts "\t#{readable_time(Time.now - time)}"
