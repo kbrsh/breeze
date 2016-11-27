@@ -1,6 +1,6 @@
 class HTTP::Server
   class Context
-    def params
+    def query
       return @request.query_params
     end
   end
