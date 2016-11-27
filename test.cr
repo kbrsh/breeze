@@ -1,7 +1,7 @@
 require "./src/breeze.cr"
 
 get "/" do |ctx|
-  "Hello Breeze! \n Content Type: #{ctx.content_type}"
+  "Hello Breeze! #{ctx.cookies}"
 end
 
 get "/test" do |ctx|
