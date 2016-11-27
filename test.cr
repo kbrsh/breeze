@@ -1,7 +1,7 @@
 require "./src/breeze.cr"
 
 get "/" do |ctx|
-  "Hello Breeze! #{ctx.cookies}"
+  "Hello Breeze! #{ctx.params}"
 end
 
 get "/test" do |ctx|
