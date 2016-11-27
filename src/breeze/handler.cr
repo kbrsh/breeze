@@ -26,7 +26,6 @@ module Breeze
       if found
         puts "\t\e[32m#{found.method.upcase} \e[33m#{ctx.response.status_code} \e[0m#{ctx.request.path}"
         ctx.response.status_code = ctx.response.status_code || 200
-        ctx.response.headers["Content-Type"] = "text/plain"
         ctx.response.puts found.handler.call ctx
       else
         ctx.response.status_code = 404
