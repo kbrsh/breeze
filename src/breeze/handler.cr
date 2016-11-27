@@ -22,7 +22,7 @@ module Breeze
     end
 
     def execReq(ctx)
-      found = find(ctx.request.path)
+      found = find(ctx.request.method, ctx.request.path)
       if found
         ctx.response.puts found.handler.call ctx
       else
