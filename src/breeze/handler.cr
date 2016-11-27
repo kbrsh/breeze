@@ -10,7 +10,7 @@ module Breeze
     def call(ctx : HTTP::Server::Context)
       time = Time.now
       execReq(ctx)
-      puts "\tResponded In #{readable_time(Time.now - time)}"
+      puts "\t#{readable_time(Time.now - time)}"
     end
 
     def add(method, path, handler)
@@ -32,7 +32,7 @@ module Breeze
         ctx.response.headers["Content-Type"] = "text/plain"
         ctx.response.puts "404 Not Found"
       end
-      puts "\t\e[32m#{ctx.request.method} \e[33m#{ctx.response.status_code} \e[0m#{ctx.request.path}"
+      puts "\t\e[32m#{ctx.request.method} \e[0m#{ctx.request.path} \e[33m#{ctx.response.status_code}\e[0m"
     rescue
       ctx.response.status_code = 500
       ctx.response.puts "500 Internal Server Error"
