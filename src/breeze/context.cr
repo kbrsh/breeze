@@ -1,6 +1,7 @@
 module Breeze
   class Breeze::Context
-    def initialize
+    def initialize()
+
     end
   end
 end
