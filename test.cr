@@ -5,6 +5,10 @@ get "/" do |ctx|
   "Hello #{thing}!"
 end
 
+get "/redirect" do |ctx|
+  ctx.redirect "https://kabir.ml"
+end
+
 get "/test" do |ctx|
   "Hello #{ctx.request.path}, code: #{ctx.response.status_code}, params: #{ctx.query}"
 end

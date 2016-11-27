@@ -3,9 +3,9 @@ module Breeze
   class Breeze::Route
     @method : String
     @path : String
-    @handler : Proc(HTTP::Server::Context, String)
+    @handler : HTTP::Server::Context -> String
 
-    def initialize(method, path, handler)
+    def initialize(method : String, path : String, handler : HTTP::Server::Context -> _)
       @method = method
       @path = path
       @handler = handler
