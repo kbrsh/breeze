@@ -23,15 +23,17 @@ module Breeze
 
     def execReq(ctx)
       found = find(ctx.request.path)
+      puts "\t\e[32m#{found.upcase} \e[33m#{ctx.response.status_code} \e[0m#{ctx.request.path}"
       if found
-        puts "\t\e[32m#{found.method.upcase} \e[33m#{ctx.response.status_code} \e[0m#{ctx.request.path}"
-        ctx.response.status_code = ctx.response.status_code || 200
         ctx.response.puts found.handler.call ctx
       else
         ctx.response.status_code = 404
         ctx.response.headers["Content-Type"] = "text/plain"
-        ctx.response.puts "Not Found"
+        ctx.response.puts "404 Not Found"
       end
+    rescue
+      ctx.response.status_code = 500
+      ctx.response.puts "500 Internal Server Error"
     end
   end
 end
