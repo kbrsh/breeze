@@ -10,7 +10,7 @@ get "/redirect" do |ctx|
 end
 
 get "/test" do |ctx|
-  "Hello #{ctx.request.path}, code: #{ctx.response.status_code}, params: #{ctx.query}"
+  "Hello #{ctx.request.path} code: #{ctx.response.status_code} params: #{ctx.query}"
 end
 
 Breeze.start
