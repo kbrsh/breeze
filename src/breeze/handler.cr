@@ -1,7 +1,8 @@
 require "http"
 
 module Breeze
-  class Breeze::Handler < HTTP::Handler
+  class Breeze::Handler
+    include HTTP::Handler
     MAIN = new
     def initialize
       @routes = [] of Route
@@ -18,7 +19,9 @@ module Breeze
     end
 
     def find(method, path)
-      matched = @routes.select {|route| route.method =~ Regex.new(method) && route.path =~ Regex.new(path)}
+      matched = @routes.select {|route|
+        route.method =~ Regex.new(method) && route.path =~ Regex.new(path)
+      }
       match = matched[0]?
       return match
     end
